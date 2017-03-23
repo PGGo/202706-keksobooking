@@ -1,7 +1,7 @@
 # Личный проект «Кексобукинг» [![Build status][travis-image]][travis-url]
 
 * Студент: [Полина Гончарова](https://up.htmlacademy.ru/javascript/9/user/202706).
-* Наставник: `Неизвестно`.
+* Наставник: [Роман Чаругин](https://htmlacademy.ru/profile/id345379).
 
 ---
 
