@@ -29,7 +29,7 @@ var lodges = [];
 for (var i = 0; i < 8; i++) {
   var lodgeItem = {
     author: {
-      avatar: 'img/avatars/user0' + (i+1) +'png'
+      avatar: 'img/avatars/user0' + (i + 1) + 'png'
     },
 
     offer: {
@@ -86,7 +86,7 @@ var createLodgeElement = function (lodge) {
   lodgeElement.querySelector('.lodge__address').textContent = lodge.offer.address;
   lodgeElement.querySelector('.lodge__price').textContent = lodge.offer.price + '&#x20bd;/ночь';
   lodgeElement.querySelector('.lodge__type').textContent = ''; //нужна дополнительная функция, которая будет выводить значение в соответствии с типом?
-  lodgeElement.querySelector('.lodge__checkin-time').textContent = 'Заезд после ' + lodge.offer.checkin + ' выезд до ' +  lodge.offer.checkout;
+  lodgeElement.querySelector('.lodge__checkin-time').textContent = 'Заезд после ' + lodge.offer.checkin + ' выезд до ' + lodge.offer.checkout;
   lodgeElement.querySelector('.lodge__features').textContent = ''; //в процессе, скорее всего innerHTML
   lodgeElement.querySelector('.lodge__description').textContent = lodge.offer.description;
 
