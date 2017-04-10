@@ -14,7 +14,7 @@ var randomInteger = function (min, max) {
   return rand;
 };
 
-//-----------------------
+// -----------------------
 
 var pinMap = document.querySelector('.tokyo__pin-map'); //сам тег
 var pin = pinMap.querySelector('.pin');
@@ -22,7 +22,7 @@ var similarLodgeTemplate = document.querySelector('#lodge-template').content;
 var dialogPanel = document.querySelector('.dialog__panel');
 var dialogTitle = document.querySelector('.dialog__title');
 
-//-----------
+// -----------
 
 var translateLodgeType = function (type) {
   var typeOfLodge = type;
@@ -131,7 +131,7 @@ var createLodgeElement = function (lodge) {
   return lodgeElement;
 };
 
-//---
+// ---
 
 var renderPinMap = function (pinMapArr) {
   var fragment = document.createDocumentFragment();
