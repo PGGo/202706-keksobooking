@@ -16,7 +16,7 @@ var randomInteger = function (min, max) {
 
 // -----------------------
 
-var pinMap = document.querySelector('.tokyo__pin-map'); //сам тег
+var pinMap = document.querySelector('.tokyo__pin-map');
 var pin = pinMap.querySelector('.pin');
 var similarLodgeTemplate = document.querySelector('#lodge-template').content;
 var dialogPanel = document.querySelector('.dialog__panel');
