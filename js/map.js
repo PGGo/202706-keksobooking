@@ -20,6 +20,7 @@ var pin = pinMap.querySelector('.pin');
 var similarLodgeTemplate = document.querySelector('#lodge-template').content;
 var dialogPanel = document.querySelector('.dialog__panel');
 var dialogTitle = document.querySelector('.dialog__title');
+var offerDialog = document.querySelector('#offer-dialog');
 
 
 var translateLodgeType = function (type) {
@@ -140,7 +141,7 @@ var renderPinMap = function (pinMapArr) {
   pinMap.appendChild(fragment);
 };
 
-var renderLodges = function (lodgeArr) {
+/* var renderLodges = function (lodgeArr) {
   var fragment = document.createDocumentFragment();
 
   for (var i = 0; i < lodgeArr.length; i++) {
@@ -149,8 +150,17 @@ var renderLodges = function (lodgeArr) {
   }
 
   dialogPanel.parentElement.appendChild(fragment);
-};
+}; */
 
+var renderLodges = function (lodgeArr) {
+  var fragment = document.createDocumentFragment();
+
+  fragment.appendChild(createLodgeElement(lodgeArr[1]));
+
+  offerDialog.replaceChild(fragment, dialogPanel);
+
+  offerDialog.replaceChild(createAvatarElement(lodgeArr[1]), dialogTitle);
+};
 
 renderPinMap(generateLodges());
 renderLodges(generateLodges());
