@@ -14,7 +14,6 @@ var randomInteger = function (min, max) {
   return rand;
 };
 
-// -----------------------
 
 var pinMap = document.querySelector('.tokyo__pin-map');
 var pin = pinMap.querySelector('.pin');
@@ -22,7 +21,6 @@ var similarLodgeTemplate = document.querySelector('#lodge-template').content;
 var dialogPanel = document.querySelector('.dialog__panel');
 var dialogTitle = document.querySelector('.dialog__title');
 
-// -----------
 
 var translateLodgeType = function (type) {
   var typeOfLodge = type;
@@ -59,10 +57,10 @@ var getLodgeFeatures = function (features) {
   return lodgeFeatures;
 };
 
-var generateLodges = function (lodgesNumber) {
+var generateLodges = function () {
   var lodges = [];
 
-  for (var i = 0; i < lodgesNumber; i++) {
+  for (var i = 0; i < 8; i++) {
     var lodgeItem = {};
 
     lodgeItem.author = {
@@ -88,7 +86,7 @@ var generateLodges = function (lodgesNumber) {
       photos: []
     };
 
-    lodges[i] = lodgeItem;
+    lodges.push(lodgeItem);
   }
 
   return lodges;
@@ -131,7 +129,6 @@ var createLodgeElement = function (lodge) {
   return lodgeElement;
 };
 
-// ---
 
 var renderPinMap = function (pinMapArr) {
   var fragment = document.createDocumentFragment();
@@ -155,5 +152,5 @@ var renderLodges = function (lodgeArr) {
 };
 
 
-renderPinMap(generateLodges(8));
-renderLodges(generateLodges(8));
+renderPinMap(generateLodges());
+renderLodges(generateLodges());
