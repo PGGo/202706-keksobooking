@@ -42,7 +42,8 @@ var translateLodgeType = function (type) {
 
 var getRandomFeatures = function () {
   var randomFeatures = [];
-  for (var i = 0; i <= randomInteger(0, 5); i++) {
+  var randomFeaturesNumber = randomInteger(0, 5);
+  for (var i = 0; i <= randomFeaturesNumber; i++) {
     randomFeatures[i] = FEATURES[i];
   }
 
@@ -140,17 +141,6 @@ var renderPinMap = function (pinMapArr) {
 
   pinMap.appendChild(fragment);
 };
-
-/* var renderLodges = function (lodgeArr) {
-  var fragment = document.createDocumentFragment();
-
-  for (var i = 0; i < lodgeArr.length; i++) {
-    fragment.appendChild(createAvatarElement(lodgeArr[i]));
-    fragment.appendChild(createLodgeElement(lodgeArr[i]));
-  }
-
-  dialogPanel.parentElement.appendChild(fragment);
-}; */
 
 var renderLodges = function (lodgeArr) {
   var fragment = document.createDocumentFragment();
