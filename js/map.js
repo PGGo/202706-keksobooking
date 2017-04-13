@@ -135,9 +135,9 @@ var createLodgeElement = function (lodge) {
 var renderPinMap = function (pinMapArr) {
   var fragment = document.createDocumentFragment();
 
-  for (var i = 0; i < pinMapArr.length; i++) {
-    fragment.appendChild(createPinMapElement(pinMapArr[i]));
-  }
+  pinMapArr.forEach(function (item, index, arr) {
+    fragment.appendChild(createPinMapElement(item));
+  });
 
   pinMap.appendChild(fragment);
 };
