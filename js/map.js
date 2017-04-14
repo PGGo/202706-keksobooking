@@ -37,6 +37,7 @@ var similarLodgeTemplate = document.querySelector('#lodge-template').content;
 var dialogPanel = document.querySelector('.dialog__panel');
 var dialogTitle = document.querySelector('.dialog__title');
 var offerDialog = document.querySelector('#offer-dialog');
+var dialogClose = offerDialog.querySelector('.dialog__close');
 
 
 var translateLodgeType = function (type) {
@@ -170,3 +171,44 @@ var renderLodges = function (lodgeArr) {
 
 renderPinMap(generateLodges());
 renderLodges(generateLodges());
+
+
+/* При нажатии на любой из элементов .pin ему должен добавляться класс pin--active и должен показываться элемент .dialog
+Если до этого у другого элемента существовал класс pin--active, то у этого элемента класс нужно убрать
+При нажатии на элемент .dialog__close карточка объявления должна скрываться. При этом должен деактивироваться элемент .pin, который был помечен как активный */
+
+/* pin.addEventListener('click', function () {
+   if (pinMap.querySelector('.pin--active') !== 'null') {
+    pinMap.querySelector('.pin--active').classList.remove('pin--active');
+  }
+  pin.classList.add('pin--active');
+}); */
+
+dialogClose.addEventListener('click', function () {
+  var tokyo = document.querySelector('.tokyo');
+  tokyo.removeElement(offerDialog);
+  pinMap.querySelector('.pin--active').classList.remove('pin--active');
+});
+
+var allPins = pinMap.querySelectorAll('.pin');
+
+/* for (var i = 0; i < allPins.length; ++i) {
+  var item = allPins[i];
+  item.addEventListener('click', function () {
+    item.classList.add('pin--active');
+  });
+} */
+
+pinMap.addEventListener('click', function (evt) {
+  var target = evt.target;
+
+  if (target.className === 'pin') {
+    target.classList.add('pin--active');
+  }
+});
+
+allPins.forEach(allPins, function (pinItem) {
+  pinItem.addEventListener('click', function () {
+    pinItem.classList.add('pin--active');
+  });
+});
